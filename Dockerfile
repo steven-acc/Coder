@@ -17,7 +17,7 @@ RUN installext ms-python.python
 # RUN sudo ln /usr/bin/pip3 /usr/bin/pip
 RUN curl -fsSL https://deb.nodesource.com/setup_17.x | sudo -E bash \
   && sudo apt-get install -y nodejs
-RUN sudo apt install speedtest-cli
+# RUN sudo apt install speedtest-cli
 
 # install pip requirements
 ADD --chown=coder:coder requirements.txt requirements.txt
@@ -42,6 +42,6 @@ ADD . /src
 
 # Make port 8080 available for links and/or publish
 EXPOSE 8080
-
+USER Root
 # Define our command to be run when launching the container
 # CMD ["python", "app.py"]
