@@ -12,16 +12,16 @@ RUN installext vscodevim.vim
 RUN installext ms-python.python
 
 # install python 3.7
-RUN sudo apt-get -y update && sudo apt-get -y install python3.8 python3-pip
-RUN sudo ln /usr/bin/python3 /usr/bin/python  
-RUN sudo ln /usr/bin/pip3 /usr/bin/pip
+# RUN sudo apt-get -y update && sudo apt-get -y install python3.8 python3-pip
+# RUN sudo ln /usr/bin/python3 /usr/bin/python  
+# RUN sudo ln /usr/bin/pip3 /usr/bin/pip
 RUN curl -fsSL https://deb.nodesource.com/setup_17.x | sudo -E bash \
   && sudo apt-get install -y nodejs
 RUN sudo apt install speedtest-cli
 
 # install pip requirements
 ADD --chown=coder:coder requirements.txt requirements.txt
-RUN pip install -r requirements.txt
+#RUN pip install -r requirements.txt
 
 #################################################################################
 
@@ -44,4 +44,4 @@ ADD . /src
 EXPOSE 8080
 
 # Define our command to be run when launching the container
-CMD ["python", "app.py"]
+# CMD ["python", "app.py"]
