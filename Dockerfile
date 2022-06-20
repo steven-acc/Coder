@@ -12,7 +12,7 @@ RUN installext vscodevim.vim
 RUN installext ms-python.python
 
 # install python 3.7
-RUN sudo apt-get -y update && sudo apt-get -y install python3.7 python3-pip
+RUN sudo apt-get -y update && sudo apt-get -y install python3.8 python3-pip
 RUN sudo ln /usr/bin/python3 /usr/bin/python  
 RUN sudo ln /usr/bin/pip3 /usr/bin/pip
 RUN curl -fsSL https://deb.nodesource.com/setup_17.x | sudo -E bash \
